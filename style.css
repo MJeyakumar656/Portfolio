@@ -1,0 +1,186 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    background-color: black;
+    color: white;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    font-size: 18px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+    color: rgb(12, 255, 12);
+    cursor: pointer;
+    background-color: rgb(54, 54, 54);
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/*Head*/
+.head {
+    margin-left: 8%;
+    margin-top: 10%;
+}
+
+.head h1 {
+    font-size: 50px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+span {
+    color: rgb(12, 255, 12);
+}
+
+.head p {
+    color: rgb(151, 154, 154);
+    line-height: 22px;
+}
+
+.head a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 25px;
+    background-color: rgb(34, 34, 34);
+    color: rgb(12, 255, 12);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.head a:hover {
+    background-color: rgb(12, 255, 12);
+    color: black;
+}
+
+.image {
+    position: absolute;
+    right: 5%;
+    top: 30%;
+    width: 36%;
+    max-width: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.logo {
+    height: 48px;
+    width: auto;
+    object-fit: contain;
+    margin-left: 95px;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    pointer-events: auto;
+    border-radius: 12px;
+}
+
+@media (max-width: 900px) {
+    .image {
+        position: relative;
+        right: auto;
+        top: auto;
+        bottom: auto;
+        width: 60%;
+        margin: 18px auto 0;
+        max-width: 380px;
+    }
+
+    .head {
+        margin-left: 5%;
+        margin-top: 12%;
+    }
+
+    .navbar {
+        width: 92%;
+    }
+
+    .logo {
+        height: 48px;
+        width: auto;
+        object-fit: contain;
+        margin-left: 35px;
+        transition: margin-left 0.3s ease;
+    }
+}
+
+@media (max-width: 480px) {
+    .image {
+        width: 80%;
+        max-width: 320px;
+    }
+
+    /* Luffy image: make it fit nicely and be responsive */
+    .image .luffy {
+        width: 360px;
+        max-width: 48%;
+        height: auto;
+        display: block;
+        margin-left: auto;
+        margin-right: 5%;
+        border-radius: 14px;
+        object-fit: cover;
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        box-shadow: 0 14px 40px rgba(2, 6, 23, 0.6);
+        transition: transform .22s ease, box-shadow .22s ease;
+    }
+
+    .image .luffy:hover {
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 26px 60px rgba(2, 6, 23, 0.7);
+    }
+
+    @media (max-width: 900px) {
+        .image .luffy {
+            width: 320px;
+            max-width: 60%;
+            margin: 18px auto 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .image .luffy {
+            width: 260px;
+            max-width: 80%;
+            margin: 12px auto 0;
+            border-radius: 12px;
+        }
+    }
+
+    .logo {
+        height: 40px;
+        margin-left: 20px;
+        transition: margin-left 0.3s ease;
+    }
+}

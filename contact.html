@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            background-color: black;
+        }
+
+
+        .contact h1 {
+            color: white;
+            font-size: 50px;
+            text-transform: capitalize;
+            text-align: center;
+            margin-top: 20px;
+            ;
+            margin-bottom: 30px;
+            position: relative;
+            animation: text 3s 1;
+        }
+
+        @keyframes text {
+            0% {
+                color: black;
+                letter-spacing: 19px;
+                filter: blur(12px);
+            }
+
+            100% {
+                color: white;
+                letter-spacing: normal;
+                filter: blur(0px);
+            }
+        }
+
+        .contact p {
+            color: white;
+            font-size: 18px;
+            line-height: 28px;
+            text-align: justify;
+            margin-top: 20px;
+            margin-left: 55px;
+            margin-right: 55px;
+        }
+
+        .contact:hover p {
+            cursor: pointer;
+            color: rgb(111, 188, 255);
+        }
+
+        /*social media links styles*/
+        .social {
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            margin: 36px 9%;
+        }
+
+        .social a {
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            border-radius: 10px;
+            background: rgba(254, 254, 254, 0.03);
+            text-decoration: none;
+            transition: transform .15s ease, background .15s ease, color .15s ease;
+        }
+
+        .social a:hover {
+            transform: translateY(-6px);
+            background: rgba(111, 188, 255, 0.12);
+            color: #6fbcff;
+        }
+
+        .icon {
+            font-size: 22px;
+            line-height: 1;
+            display: inline-block;
+            color: currentColor;
+        }
+
+        .icon-text {
+            font-weight: 600;
+            font-size: 16px;
+            color: inherit;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        @media (max-width: 480px) {
+            .social a {
+                width: 48px;
+                height: 48px;
+            }
+
+            .icon {
+                font-size: 18px;
+            }
+        }
+
+        /*contact form styles*/
+        .contact-form {
+            max-width: 940px;
+            margin: 28px auto 56px;
+            padding: 14px 18px
+        }
+
+        .contact-form table {
+            width: 100%;
+            border-collapse: collapse
+        }
+
+        .contact-form td {
+            padding: 8px 12px;
+            vertical-align: top
+        }
+
+        .contact-form label {
+            display: inline-block;
+            color: #eaf6ff;
+            font-weight: 600;
+            margin-bottom: 6px
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.02);
+            color: #eaf6ff
+        }
+
+        .contact-form .btn-submit {
+            background: rgb(12, 255, 12);
+            color: #031013;
+            padding: 10px 16px;
+            border-radius: 8px;
+            border: none;
+            font-weight: 700;
+            cursor: pointer
+        }
+
+        .contact-form .btn-submit:hover {
+            opacity: 0.95
+        }
+
+        @media (max-width:700px) {
+            .contact-form table {
+                display: block
+            }
+
+            .contact-form td {
+                display: block;
+                padding: 8px 0
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="contact">
+        <h1>Contact <span>Me :</span></h1>
+
+        <form class="contact-form" action="#" method="post">
+            <table>
+                <tr>
+                    <td><label for="name">Name</label></td>
+                    <td><input id="name" name="name" type="text" required placeholder="Your full name"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td><input id="email" name="email" type="email" required placeholder="you@example.com"></td>
+                </tr>
+                <tr>
+                    <td><label for="location">Location</label></td>
+                    <td><input id="location" name="location" type="text" placeholder="City, Country"></td>
+                </tr>
+                <tr>
+                    <td><label for="subject">Subject</label></td>
+                    <td><input id="subject" name="subject" type="text" placeholder="Short subject"></td>
+                </tr>
+                <tr>
+                    <td><label for="message">Message</label></td>
+                    <td><textarea id="message" name="message" rows="6" required
+                            placeholder="Type your question or message here..."></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit" class="btn-submit">Send Message</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <div class="social">
+        <a href="mailto: jayakumar03052005@gmail.com" aria-label="Email" title="Email">
+            <i class="fa-regular fa-envelope icon"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/m-jeya-kumar-a41a8b2a3" target="_blank" rel="noopener"
+            aria-label="LinkedIn" title="LinkedIn">
+            <i class="fa-brands fa-linkedin icon"></i>
+        </a>
+        <a href="https://github.com/MJeyakumar656" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">
+            <i class="fa-brands fa-github icon"></i>
+        </a>
+    </div>
+</body>
+
+</html>

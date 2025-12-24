@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MySelf</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            background-color: black;
+        }
+
+        .about {
+            position: absolute;
+            margin-top: 10%;
+            margin-left: 9%;
+            margin-right: 9%;
+        }
+
+        .about h1 {
+            color: white;
+            font-size: 50px;
+            text-transform: capitalize;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            animation: text 3s 1;
+        }
+
+        @keyframes text {
+            0% {
+                color: black;
+                letter-spacing: 19px;
+                filter: blur(12px);
+            }
+
+            100% {
+                color: white;
+                letter-spacing: normal;
+                filter: blur(0px);
+            }
+        }
+
+        .about p {
+            color: white;
+            font-size: 20px;
+            text-align: center;
+            line-height: 30px;
+            text-align: justify;
+        }
+
+        .about:hover p {
+            cursor: pointer;
+            color: rgb(111, 188, 255);
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="about">
+        <h1>About <span>MySelf</span></h1>
+        <p>Aspiring <span> Web Developer</span> eager to build creative and efficient digital experiences. Skilled in
+            the basics of
+            programming and networking, with a strong drive to learn, grow, and turn ideas into real-world
+            solutions.Motivated Web Developer skilled in Python, HTML, CSS, JavaScript, and responsive design.
+            Completed internships in web development and networking. Quick learner with strong problemsolving skills and
+            a passion for building clean, user-friendly interfaces. Equipped with a basic foundation in programming and
+            problem-solving, combined with a keen interest in building efficient digital solutions. Adaptable,
+            strategic, and ready to contribute to dynamic tech environments.</p>
+    </div>
+</body>
+
+</html>

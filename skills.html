@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skills</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg: #07070a;
+            --card: #0f1724;
+            --accent: #6fbcff
+        }
+
+        html,
+        body {
+            height: 100%;
+            background: var(--bg);
+            font-family: 'Poppins', sans-serif;
+            color: #eaf6ff
+        }
+
+        .container {
+            width: min(1100px, 94%);
+            margin: 6vh auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px
+        }
+
+        .card {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6)
+        }
+
+        .card h2 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            color: #fff
+        }
+
+        .card h2 span {
+            color: rgb(12, 255, 12)
+        }
+
+        .card ul {
+            padding-left: 18px;
+            margin-top: 8px
+        }
+
+        .card li {
+            margin: 8px 0;
+            color: #cfe9ff;
+            line-height: 1.45;
+            font-size: 0.98rem
+        }
+
+        .card p {
+            color: #cbdff2;
+            margin-top: 8px;
+            font-size: 0.95rem
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+            transition: transform .18s ease
+        }
+
+        .cert-link {
+            color: #cfe9ff;
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(207, 233, 255, 0.12);
+            padding-bottom: 1px
+        }
+
+        .cert-link:hover {
+            color: rgb(111, 188, 255);
+            text-decoration: underline
+        }
+
+        @media (max-width:420px) {
+            .container {
+                gap: 16px;
+                padding: 0 6px
+            }
+
+            .card {
+                padding: 16px
+            }
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="container">
+        <section class="card">
+            <h2><span>Skills</span></h2>
+            <ul>
+                <li><strong>Programming:</strong> C (basic), C++ (basic), Python, HTML, CSS, JavaScript</li>
+                <li><strong>Web:</strong> Responsive Design, Fetch API (basic), DOM Manipulation</li>
+                <li><strong>Tools:</strong> Git, GitHub, VS Code</li>
+                <li><strong>Soft:</strong> Communication, Adaptability, Teamwork, Problem-solving</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2><span>Projects</span></h2>
+            <ul>
+                <li>
+                    <strong>To-Do List Web</strong>
+                    <p>Add, delete, and complete tasks using LocalStorage. Built with HTML, CSS, JavaScript. Fully
+                        responsive UI.</p>
+                </li>
+                <li>
+                    <strong>Tic Tac Toe</strong>
+                    <p>Built with Python. One-player mode with score tracking. Includes computer-generated random moves.
+                    </p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2><span>Certificates</span></h2>
+            <ul>
+                <li><a class="cert-link"
+                        href="https://www.credly.com/badges/0c068e98-4475-4372-9da7-dd6e856b3c6f/public_url"
+                        target="_blank" rel="noopener noreferrer">Python Essentials 1 — Cisco</a></li>
+                <li><a class="cert-link"
+                        href="https://www.credly.com/badges/b9ff6170-5396-45ef-bc2a-d07389a09b6f/public_url"
+                        target="_blank" rel="noopener noreferrer">Python Essentials 2 — Cisco</a></li>
+                <li><a class="cert-link" href="https://www.hackerrank.com/certificates/174e62a67e42" target="_blank"
+                        rel="noopener noreferrer">Python (Basic) — HackerRank</a></li>
+                <li><a class="cert-link" href="/web techologies.pdf" target="_blank" rel="noopener noreferrer">Web
+                        Technologies — Swayam</a></li>
+                <li><a class="cert-link" href="/CSC certificate.pdf" target="_blank" rel="noopener noreferrer">Advanced
+                        Diploma in Python Programming — CSC</a></li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+
+</html>
