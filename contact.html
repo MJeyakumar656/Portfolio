@@ -173,6 +173,39 @@
                 padding: 8px 0
             }
         }
+        /* Popup styles */
+        .popup{
+            position: fixed;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.6);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .2s ease;
+            z-index: 9999;
+        }
+        .popup.show{ opacity: 1; pointer-events: auto; }
+        .popup-content{         
+            background: #ffffff;
+            color: #031013;
+            padding: 18px 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            max-width: 92%;
+            text-align: center;
+        }
+        .popup-close{
+            margin-top: 12px;
+            padding: 8px 14px;
+            border: none;
+            background: #2196f3;
+            color: #fff;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+        }
     </style>
 
 </head>
@@ -223,6 +256,73 @@
             <i class="fa-brands fa-github icon"></i>
         </a>
     </div>
+    <!-- Submit popup -->
+    <div id="submit-popup" class="popup" aria-hidden="true">
+        <div class="popup-content" role="dialog" aria-modal="true" aria-labelledby="popup-title">
+            <div id="popup-title" class="popup-message">Message sent successfully!</div>
+            <button id="popup-close" class="popup-close">Close</button>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            const form = document.querySelector('.contact-form');
+            const popup = document.getElementById('submit-popup');
+            const popupMessage = popup.querySelector('.popup-message');
+            const popupClose = document.getElementById('popup-close');
+
+            function showPopup(msg){
+                popupMessage.textContent = msg || 'Message sent successfully!';
+                popup.classList.add('show');
+                popup.setAttribute('aria-hidden', 'false');
+                setTimeout(hidePopup, 3000);
+            }
+
+            function hidePopup(){
+                popup.classList.remove('show');
+                popup.setAttribute('aria-hidden', 'true');
+            }
+
+                form.addEventListener('submit', async function(e){
+                    e.preventDefault();
+                    const submitBtn = form.querySelector('.btn-submit');
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'Sending...';
+
+                    const payload = {
+                        name: form.name.value.trim(),
+                        email: form.email.value.trim(),
+                        location: form.location.value.trim(),
+                        subject: form.subject.value.trim(),
+                        message: form.message.value.trim()
+                    };
+
+                    try {
+                        const res = await fetch('http://localhost:3000/send', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(payload)
+                        });
+
+                        if (!res.ok) {
+                            const err = await res.json().catch(()=>({ error: 'Server error' }));
+                            throw new Error(err.error || 'Failed to send message');
+                        }
+
+                        showPopup('Thank you! Your message has been sent.');
+                        form.reset();
+                    } catch (err) {
+                        showPopup('Error sending message: ' + (err.message || 'unknown'));
+                    } finally {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Send Message';
+                    }
+                });
+
+            popupClose.addEventListener('click', hidePopup);
+            popup.addEventListener('click', function(e){ if(e.target === popup) hidePopup(); });
+        })();
+    </script>
 </body>
 
 </html>
